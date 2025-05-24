@@ -20,6 +20,11 @@ class Settings(BaseSettings):
     # Stripe
     STRIPE_SECRET_KEY: str = os.getenv("STRIPE_SECRET_KEY", "sk_test_...")
     STRIPE_WEBHOOK_SECRET: str = os.getenv("STRIPE_WEBHOOK_SECRET", "whsec_...")
+    STRIPE_PRICE_BASIC: Optional[str] = os.getenv("STRIPE_PRICE_BASIC")
+    STRIPE_PRICE_PRO: Optional[str] = os.getenv("STRIPE_PRICE_PRO")
+    STRIPE_PRICE_ENTERPRISE: Optional[str] = os.getenv("STRIPE_PRICE_ENTERPRISE")
+    STRIPE_SUCCESS_URL: Optional[str] = os.getenv("STRIPE_SUCCESS_URL", "https://yourapi.com/success?session_id={CHECKOUT_SESSION_ID}")
+    STRIPE_CANCEL_URL: Optional[str] = os.getenv("STRIPE_CANCEL_URL", "https://yourapi.com/cancel")
     
     # File Upload
     MAX_UPLOAD_SIZE: int = 50 * 1024 * 1024  # 50MB
@@ -43,6 +48,9 @@ class Settings(BaseSettings):
     
     # CORS
     BACKEND_CORS_ORIGINS: list = ["*"]
+    
+    # RapidAPI
+    RAPIDAPI_PROXY_SECRET: Optional[str] = os.getenv("RAPIDAPI_PROXY_SECRET")
     
     class Config:
         case_sensitive = True
