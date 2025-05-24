@@ -14,7 +14,7 @@ import fitz  # PyMuPDF
 from pdf2image import convert_from_path, convert_from_bytes
 from PIL import Image
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A4, A3, letter, legal, tabloid
+from reportlab.lib.pagesizes import A4, A3, letter, legal, TABLOID
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -517,7 +517,7 @@ class PDFService:
             "A3": A3,
             "Letter": letter,
             "Legal": legal,
-            "Tabloid": tabloid
+            "Tabloid": TABLOID
         }
         
         page_dims = page_sizes.get(page_size, A4)
