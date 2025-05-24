@@ -38,16 +38,17 @@ RUN playwright install-deps chromium
 # Copy application code
 COPY app/ ./app/
 COPY .env.example .env
+COPY start.py .
 
 # Create temp directory
 RUN mkdir -p /tmp/pdf-api
 
-# Expose port
-EXPOSE 8000
+# Don't expose a specific port - Railway will handle this
+# EXPOSE 8000
 
-# Health check
+# Health check using dynamic port
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8000/health')"
+    CMD python -c "import os, requests; port = os.environ.get('PORT', '8000'); requests.get(f'http://localhost:{port}/health')"
 
-# Run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the application using our start script
+CMD ["python", "start.py"]
