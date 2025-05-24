@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightning PDF API - Fast & Reliable PDF Processing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing {
+            padding: 80px 0;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+        
+        .price {
+            font-size: 3rem;
+            color: #667eea;
+            margin: 1rem 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 80px 0;
+        }
+        
+        .code-example h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        pre {
+            background: #1a202c;
+            padding: 2rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        code {
+            font-family: 'Courier New', monospace;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">⚡ Lightning PDF API</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="/docs">API Docs</a>
+                <a href="/create-checkout-session?plan=basic" class="btn btn-primary">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Lightning Fast PDF Processing</h1>
+            <p>Generate, manipulate, and extract data from PDFs with our powerful API</p>
+            <div class="cta-buttons">
+                <a href="/create-checkout-session?plan=basic" class="btn btn-primary">Start Free Trial</a>
+                <a href="https://rapidapi.com/lightning-pdf-api" class="btn btn-secondary">View on RapidAPI</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Powerful PDF Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📄 PDF Generation</h3>
+                    <p>Convert HTML, URLs, or use pre-built templates to create professional PDFs instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔗 Merge & Split</h3>
+                    <p>Combine multiple PDFs or split them by pages. Perfect for document management.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🗜️ Compression</h3>
+                    <p>Reduce PDF file sizes by up to 90% while maintaining quality.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Security</h3>
+                    <p>Add passwords, encryption, and permissions to protect sensitive documents.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💧 Watermarking</h3>
+                    <p>Add text or image watermarks to brand and protect your PDFs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Data Extraction</h3>
+                    <p>Extract text, images, and metadata from PDFs programmatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 100 PDFs/hour</li>
+                        <li>✓ PDF Generation</li>
+                        <li>✓ Merge & Split</li>
+                        <li>✓ Basic Support</li>
+                    </ul>
+                    <br>
+                    <a href="/create-checkout-session?plan=basic" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Pro</h3>
+                    <div class="price">$99<span>/month</span></div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 1,000 PDFs/hour</li>
+                        <li>✓ All Basic features</li>
+                        <li>✓ Compression & Security</li>
+                        <li>✓ Priority Support</li>
+                    </ul>
+                    <br>
+                    <a href="/create-checkout-session?plan=pro" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$299<span>/month</span></div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 10,000 PDFs/hour</li>
+                        <li>✓ All Pro features</li>
+                        <li>✓ Custom Integration</li>
+                        <li>✓ 24/7 Support</li>
+                    </ul>
+                    <br>
+                    <a href="/create-checkout-session?plan=enterprise" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="code-example">
+        <div class="container">
+            <h2>Easy to Use</h2>
+            <pre><code>import requests
+
+# Generate PDF from HTML
+response = requests.post(
+    "https://api.lightningpdf.com/api/v1/pdf/generate",
+    headers={"X-API-Key": "your_api_key"},
+    json={
+        "html": "&lt;h1&gt;Hello World&lt;/h1&gt;",
+        "options": {"format": "A4"}
+    }
+)
+
+# Download the PDF
+pdf_url = response.json()["file_url"]</code></pre>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lightning PDF API. All rights reserved.</p>
+            <p>
+                <a href="/terms" style="color: white;">Terms</a> | 
+                <a href="/privacy" style="color: white;">Privacy</a> | 
+                <a href="mailto:support@lightningpdf.com" style="color: white;">Support</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

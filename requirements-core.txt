@@ -1,0 +1,16 @@
+# Core dependencies only (for quick setup)
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+redis==5.0.1
+python-multipart==0.0.6
+aiofiles==23.2.1
+PyPDF2==3.0.1
+pymupdf==1.23.8
+pdf2image==1.16.3
+Pillow==10.1.0
+playwright==1.40.0
+python-dotenv==1.0.0
+pydantic==2.5.2
+pydantic-settings==2.1.0
+stripe==7.8.0
+aiohttp==3.9.1

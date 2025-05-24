@@ -1,0 +1,192 @@
+{
+  "name": "Lightning PDF API",
+  "description": "Comprehensive PDF generation, manipulation, and extraction API. Convert HTML to PDF, merge/split PDFs, compress, watermark, extract text/images, and more.",
+  "category": "Tools",
+  "website": "https://lightningpdf.com",
+  "terms": "https://lightningpdf.com/terms",
+  "contact": "support@lightningpdf.com",
+  "tags": [
+    "pdf",
+    "pdf-api",
+    "pdf-generator",
+    "pdf-converter",
+    "pdf-merger",
+    "pdf-compressor",
+    "document-processing",
+    "html-to-pdf",
+    "pdf-manipulation"
+  ],
+  "endpoints": [
+    {
+      "name": "Generate PDF",
+      "path": "/api/v1/pdf/generate",
+      "method": "POST",
+      "description": "Generate PDF from HTML, URL, or pre-built templates",
+      "group": "PDF Generation"
+    },
+    {
+      "name": "List Templates",
+      "path": "/api/v1/pdf/templates",
+      "method": "GET",
+      "description": "Get list of available PDF templates",
+      "group": "PDF Generation"
+    },
+    {
+      "name": "Merge PDFs",
+      "path": "/api/v1/pdf/merge",
+      "method": "POST",
+      "description": "Merge multiple PDF files into one",
+      "group": "PDF Manipulation"
+    },
+    {
+      "name": "Split PDF",
+      "path": "/api/v1/pdf/split",
+      "method": "POST",
+      "description": "Split PDF by page ranges or into chunks",
+      "group": "PDF Manipulation"
+    },
+    {
+      "name": "Compress PDF",
+      "path": "/api/v1/pdf/compress",
+      "method": "POST",
+      "description": "Reduce PDF file size with configurable quality",
+      "group": "PDF Manipulation"
+    },
+    {
+      "name": "Rotate PDF",
+      "path": "/api/v1/pdf/rotate",
+      "method": "POST",
+      "description": "Rotate PDF pages",
+      "group": "PDF Manipulation"
+    },
+    {
+      "name": "Add Watermark",
+      "path": "/api/v1/pdf/watermark",
+      "method": "POST",
+      "description": "Add text or image watermark to PDF",
+      "group": "PDF Manipulation"
+    },
+    {
+      "name": "Secure PDF",
+      "path": "/api/v1/pdf/secure",
+      "method": "POST",
+      "description": "Add password protection and permissions to PDF",
+      "group": "PDF Manipulation"
+    },
+    {
+      "name": "Extract Text",
+      "path": "/api/v1/pdf/extract/text",
+      "method": "POST",
+      "description": "Extract text content from PDF",
+      "group": "PDF Extraction"
+    },
+    {
+      "name": "Extract Images",
+      "path": "/api/v1/pdf/extract/images",
+      "method": "POST",
+      "description": "Extract images from PDF",
+      "group": "PDF Extraction"
+    },
+    {
+      "name": "Get Metadata",
+      "path": "/api/v1/pdf/extract/metadata",
+      "method": "POST",
+      "description": "Extract metadata from PDF",
+      "group": "PDF Extraction"
+    },
+    {
+      "name": "PDF to Images",
+      "path": "/api/v1/pdf/to/images",
+      "method": "POST",
+      "description": "Convert PDF pages to images",
+      "group": "PDF Conversion"
+    },
+    {
+      "name": "Images to PDF",
+      "path": "/api/v1/pdf/from/images",
+      "method": "POST",
+      "description": "Convert images to PDF",
+      "group": "PDF Conversion"
+    },
+    {
+      "name": "Check Usage",
+      "path": "/api/v1/usage",
+      "method": "GET",
+      "description": "Check API usage and limits",
+      "group": "Account"
+    }
+  ],
+  "pricing": [
+    {
+      "name": "Basic",
+      "price": 0,
+      "requests": 100,
+      "rate_limit": "20 requests per minute",
+      "description": "Perfect for testing and small projects",
+      "features": [
+        "PDF Generation (HTML/URL/Templates)",
+        "Merge & Split PDFs",
+        "Rotate Pages",
+        "Basic Support"
+      ]
+    },
+    {
+      "name": "Pro",
+      "price": 29,
+      "requests": 3000,
+      "rate_limit": "100 requests per minute",
+      "description": "For professional developers and small businesses",
+      "features": [
+        "All Basic features",
+        "PDF Compression",
+        "Watermarking",
+        "Password Protection",
+        "Text & Image Extraction",
+        "PDF to Image Conversion",
+        "Priority Support"
+      ]
+    },
+    {
+      "name": "Ultra",
+      "price": 99,
+      "requests": 30000,
+      "rate_limit": "1000 requests per minute",
+      "description": "For high-volume applications",
+      "features": [
+        "All Pro features",
+        "Batch Processing",
+        "Advanced Compression",
+        "OCR Support",
+        "Custom Templates",
+        "Dedicated Support"
+      ]
+    },
+    {
+      "name": "Mega",
+      "price": 299,
+      "requests": 300000,
+      "rate_limit": "10000 requests per minute",
+      "description": "Enterprise-grade PDF processing",
+      "features": [
+        "All Ultra features",
+        "Unlimited Requests",
+        "Custom Integration",
+        "SLA Guarantee",
+        "24/7 Phone Support"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "RapidAPI",
+    "description": "Authentication is handled automatically by RapidAPI. Your requests will include RapidAPI headers that identify your subscription level."
+  },
+  "code_examples": {
+    "python": {
+      "generate_pdf": "import requests\n\nurl = \"https://lightning-pdf-api.p.rapidapi.com/api/v1/pdf/generate\"\n\npayload = {\n    \"html\": \"<h1>Hello World</h1><p>This is a PDF generated from HTML!</p>\",\n    \"options\": {\n        \"format\": \"A4\",\n        \"margin\": {\"top\": \"2cm\", \"bottom\": \"2cm\"}\n    }\n}\n\nheaders = {\n    \"content-type\": \"application/json\",\n    \"X-RapidAPI-Key\": \"YOUR-RAPIDAPI-KEY\",\n    \"X-RapidAPI-Host\": \"lightning-pdf-api.p.rapidapi.com\"\n}\n\nresponse = requests.post(url, json=payload, headers=headers)\nprint(response.json())",
+      "merge_pdfs": "import requests\n\nurl = \"https://lightning-pdf-api.p.rapidapi.com/api/v1/pdf/merge\"\n\nfiles = [\n    ('files', open('doc1.pdf', 'rb')),\n    ('files', open('doc2.pdf', 'rb'))\n]\n\nheaders = {\n    \"X-RapidAPI-Key\": \"YOUR-RAPIDAPI-KEY\",\n    \"X-RapidAPI-Host\": \"lightning-pdf-api.p.rapidapi.com\"\n}\n\nresponse = requests.post(url, files=files, headers=headers)\nprint(response.json())"
+    },
+    "javascript": {
+      "generate_pdf": "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://lightning-pdf-api.p.rapidapi.com/api/v1/pdf/generate',\n  headers: {\n    'content-type': 'application/json',\n    'X-RapidAPI-Key': 'YOUR-RAPIDAPI-KEY',\n    'X-RapidAPI-Host': 'lightning-pdf-api.p.rapidapi.com'\n  },\n  data: {\n    html: '<h1>Hello World</h1><p>This is a PDF generated from HTML!</p>',\n    options: {\n      format: 'A4',\n      margin: {top: '2cm', bottom: '2cm'}\n    }\n  }\n};\n\ntry {\n  const response = await axios.request(options);\n  console.log(response.data);\n} catch (error) {\n  console.error(error);\n}"
+    }
+  }
+}
